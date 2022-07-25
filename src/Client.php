@@ -1,6 +1,6 @@
 <?php
 
-namespace AwesomeManager\TeamClient\Client;
+namespace AwesomeManager\TeamService\Client;
 
 use Awesome\Connector\Request;
 use Awesome\Connector\Contracts\Request as RequestContract;
