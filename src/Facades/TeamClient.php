@@ -7,7 +7,8 @@ use Awesome\Connector\Contracts\Request;
 use AwesomeManager\TeamService\Client\Contracts\Client as ClientContract;
 
 /**
- * @method static Request employee()
+ * @method static Request employees()
+ * @method static Request vacations()
  */
 class TeamClient extends Facade
 {

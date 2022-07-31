@@ -12,6 +12,11 @@ class Client implements ClientContract
     {
         return $this->makeRequest()->url('employees/');
     }
+    
+    public function vacations(): RequestContract
+    {
+        return $this->makeRequest()->url('vacations/');
+    }
 
     protected function makeRequest(): RequestContract
     {
