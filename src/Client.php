@@ -8,14 +8,32 @@ use AwesomeManager\TeamService\Client\Contracts\Client as ClientContract;
 
 class Client implements ClientContract
 {
-    public function employees(): RequestContract
+    public function employees(bool $activeOnly = true): RequestContract
     {
-        return $this->makeRequest()->url('employees/');
+        return $this->makeRequest()
+            ->url('employees/')
+            ->query(['active_only' => $activeOnly]);
     }
     
-    public function vacations(): RequestContract
+    public function grades(array $ids = []): RequestContract
     {
-        return $this->makeRequest()->url('vacations/');
+        return $this->makeRequest()
+            ->url('grades/')
+            ->query(['ids' => $ids]);
+    }
+    
+    public function positions(array $ids = []): RequestContract
+    {
+        return $this->makeRequest()
+            ->url('positions/')
+            ->query(['ids' => $ids]);
+    }
+
+    public function vacations(bool $activeOnlyEmployees = true): RequestContract
+    {
+        return $this->makeRequest()
+            ->url('vacations/')
+            ->query(['active_only_employees' => $activeOnlyEmployees]);
     }
 
     protected function makeRequest(): RequestContract
